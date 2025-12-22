@@ -21,12 +21,10 @@
             text-align: center;
             margin-bottom: 50px;
         }
-        /* コンテナを1つにまとめ、グリッドを制御 */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            /* 画面幅に合わせて自動で列数を調整 */
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
         }
@@ -40,7 +38,7 @@
             color: inherit;
             display: flex;
             flex-direction: column;
-            height: 100%; /* カードの高さを揃える */
+            height: 100%;
         }
         .card:hover {
             transform: translateY(-5px);
@@ -48,18 +46,22 @@
         }
         .card-image {
             width: 100%;
-            aspect-ratio: 16 / 9; /* 画像の比率を一定にする */
+            aspect-ratio: 16 / 9;
             background: #e9ecef;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8em;
-            color: #adb5bd;
-            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+        /* 動画を枠いっぱいに広げ、隙間なく表示 */
+        .card-image video, .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .card-content {
             padding: 20px;
-            flex-grow: 1; /* テキスト量に関わらず高さを補完 */
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
@@ -97,8 +99,10 @@
 </header>
 
 <div class="container">
-    <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot</div>
+    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">
+            <video src="videos/star-map.mp4" autoplay loop muted playsinline></video>
+        </div>
         <div class="card-content">
             <span class="tag">Astronomy</span>
             <h2 class="card-title">恒星距離と星座地図</h2>
@@ -106,26 +110,32 @@
         </div>
     </a>
 
-    <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot</div>
+    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">
+            <video src="videos/map-sphere.mp4" autoplay loop muted playsinline></video>
+        </div>
         <div class="card-content">
             <span class="tag">Geography</span>
             <h2 class="card-title">平面地図と球体</h2>
-            <p class="card-desc">2点間の距離をアニメーションで把握させる。</p>
+            <p class="card-desc">２点間の距離をアニメーションで把握させる。</p>
         </div>
     </a>
 
-    <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot</div>
+    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">
+            <video src="videos/spirapot.mp4" autoplay loop muted playsinline></video>
+        </div>
         <div class="card-content">
             <span class="tag">Geometry</span>
             <h2 class="card-title">spirapot</h2>
-            <p class="card-desc">幾何学おもちゃスピログラムを3次元化。</p>
+            <p class="card-desc">幾何学おもちゃスピログラムを３次元化。</p>
         </div>
     </a>
     
-    <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot</div>
+    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">
+            <video src="videos/insolation.mp4" autoplay loop muted playsinline></video>
+        </div>
         <div class="card-content">
             <span class="tag">Science</span>
             <h2 class="card-title">日照度の理解</h2>
@@ -133,8 +143,10 @@
         </div>
     </a>
 
-    <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot</div>
+    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">
+            <video src="videos/morse.mp4" autoplay loop muted playsinline></video>
+        </div>
         <div class="card-content">
             <span class="tag">Communication</span>
             <h2 class="card-title">モールス信号</h2>
@@ -142,53 +154,55 @@
         </div>
     </a>
 
-    <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot</div>
+    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">Screenshot Placeholder</div>
+        <div class="card-content">
+            <span class="tag">Sound</span>
+            <h2 class="card-title">恒星と音と癒し</h2>
+            <p class="card-desc">黄道１２星座と癒し音を融合。</p>
+        </div>
+    </a>
+    
+    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">
+            <video src="videos/analemma.mp4" autoplay loop muted playsinline></video>
+        </div>
         <div class="card-content">
             <span class="tag">Astronomy</span>
             <h2 class="card-title">アナレンマ</h2>
             <p class="card-desc">ストリートビューにアナレンマ投影、太陽と方向理解。</p>
         </div>
     </a>
-
-    <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot</div>
-        <div class="card-content">
-            <span class="tag">Sound</span>
-            <h2 class="card-title">恒星と音と癒し</h2>
-            <p class="card-desc">黄道12星座と癒し音を融合。</p>
-        </div>
-    </a>
     
-    <a href="./baumkuchen-blocks/" class="card">
-        <div class="card-image">Screenshot</div>
+    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">Screenshot Placeholder</div>
         <div class="card-content">
-            <span class="tag">Toy</span>
+            <span class="tag">Geometry</span>
             <h2 class="card-title">積み木</h2>
             <p class="card-desc">円形のブロックを組み合わせて幾何学模様を作るシミュレーター。</p>
         </div>
     </a>
 
-    <a href="./baumkuchen-blocks/" class="card">
-        <div class="card-image">Screenshot</div>
+    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">Screenshot Placeholder</div>
         <div class="card-content">
             <span class="tag">Education</span>
-            <h2 class="card-title">クイズ「2点間問題」</h2>
+            <h2 class="card-title">クイズ「２点間問題」</h2>
             <p class="card-desc">クイズ頻出の数学問題を操作可能グラフで理解。</p>
         </div>
     </a>
 
-    <a href="./baumkuchen-blocks/" class="card">
-        <div class="card-image">Screenshot</div>
+    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">Screenshot Placeholder</div>
         <div class="card-content">
             <span class="tag">Game</span>
-            <h2 class="card-title">15パズルの最後だけ</h2>
+            <h2 class="card-title">１５パズルの最後だけ</h2>
             <p class="card-desc">一番おいしいとこだけ遊ぶ。</p>
         </div>
     </a>
 
-    <a href="./baumkuchen-blocks/" class="card">
-        <div class="card-image">Screenshot</div>
+    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">Screenshot Placeholder</div>
         <div class="card-content">
             <span class="tag">Toy</span>
             <h2 class="card-title">ハンドスピナー</h2>
@@ -196,14 +210,15 @@
         </div>
     </a>
 
-    <a href="./baumkuchen-blocks/" class="card">
-        <div class="card-image">Screenshot</div>
+    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">Screenshot Placeholder</div>
         <div class="card-content">
             <span class="tag">History</span>
             <h2 class="card-title">江戸時間と大名時計</h2>
             <p class="card-desc">「酉の刻」や「暮れ六つ」を視覚的に理解する。</p>
         </div>
     </a>
+    
 </div>
 
 </body>

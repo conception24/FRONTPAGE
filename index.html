@@ -21,11 +21,13 @@
             text-align: center;
             margin-bottom: 50px;
         }
+        /* コンテナを1つにまとめ、グリッドを制御 */
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            /* 画面幅に合わせて自動で列数を調整 */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
         }
         .card {
@@ -33,37 +35,47 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
+            height: 100%; /* カードの高さを揃える */
         }
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         .card-image {
             width: 100%;
-            height: 180px;
-            background: #ddd;
+            aspect-ratio: 16 / 9; /* 画像の比率を一定にする */
+            background: #e9ecef;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9em;
-            color: #999;
+            font-size: 0.8em;
+            color: #adb5bd;
+            border-bottom: 1px solid #eee;
         }
         .card-content {
             padding: 20px;
+            flex-grow: 1; /* テキスト量に関わらず高さを補完 */
+            display: flex;
+            flex-direction: column;
         }
         .card-title {
             margin: 0 0 10px 0;
-            font-size: 1.25em;
-            color: var(--accent);
+            font-size: 1.15em;
+            font-weight: bold;
+            color: var(--primary);
+            line-height: 1.4;
         }
         .card-desc {
             font-size: 0.9em;
             line-height: 1.6;
             margin-bottom: 15px;
+            color: #666;
+            flex-grow: 1;
         }
         .tag {
             display: inline-block;
@@ -71,8 +83,9 @@
             color: #3498db;
             padding: 2px 8px;
             border-radius: 4px;
-            font-size: 0.8em;
+            font-size: 0.75em;
             font-weight: bold;
+            align-self: flex-start;
         }
     </style>
 </head>
@@ -85,121 +98,113 @@
 
 <div class="container">
     <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
+        <div class="card-image">Screenshot</div>
         <div class="card-content">
-            <span class="tag">Geography</span>
+            <span class="tag">Astronomy</span>
             <h2 class="card-title">恒星距離と星座地図</h2>
             <p class="card-desc">星座を距離と歴史の視点で認識する。</p>
         </div>
     </a>
 
-
-<div class="container">
     <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
+        <div class="card-image">Screenshot</div>
         <div class="card-content">
             <span class="tag">Geography</span>
             <h2 class="card-title">平面地図と球体</h2>
-            <p class="card-desc">２点間の距離をアニメーションで把握させる。</p>
+            <p class="card-desc">2点間の距離をアニメーションで把握させる。</p>
         </div>
     </a>
 
-
-<div class="container">
     <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
+        <div class="card-image">Screenshot</div>
         <div class="card-content">
-            <span class="tag">Geography</span>
+            <span class="tag">Geometry</span>
             <h2 class="card-title">spirapot</h2>
-            <p class="card-desc">幾何学おもちゃスピログラムを３次元化。</p>
+            <p class="card-desc">幾何学おもちゃスピログラムを3次元化。</p>
         </div>
     </a>
     
-<div class="container">
     <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
+        <div class="card-image">Screenshot</div>
         <div class="card-content">
-            <span class="tag">Geography</span>
+            <span class="tag">Science</span>
             <h2 class="card-title">日照度の理解</h2>
             <p class="card-desc">太陽と地球の日照度を操作して体感。</p>
         </div>
     </a>
 
-<div class="container">
     <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
+        <div class="card-image">Screenshot</div>
         <div class="card-content">
-            <span class="tag">Geography</span>
+            <span class="tag">Communication</span>
             <h2 class="card-title">モールス信号</h2>
             <p class="card-desc">同調語としてのモールス信号の理解と記憶。</p>
         </div>
     </a>
 
-  <a href="./baumkuchen-blocks/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
-        <div class="card-content">
-            <span class="tag">Geometry</span>
-            <h2 class="card-title">恒星と音と癒し</h2>
-            <p class="card-desc">黄道１２星座と癒し音を融合。</p>
-        </div>
-    </a>
-    
-<div class="container">
     <a href="./stellar-scope/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
+        <div class="card-image">Screenshot</div>
         <div class="card-content">
-            <span class="tag">Geography</span>
+            <span class="tag">Astronomy</span>
             <h2 class="card-title">アナレンマ</h2>
             <p class="card-desc">ストリートビューにアナレンマ投影、太陽と方向理解。</p>
         </div>
     </a>
+
+    <a href="./stellar-scope/" class="card">
+        <div class="card-image">Screenshot</div>
+        <div class="card-content">
+            <span class="tag">Sound</span>
+            <h2 class="card-title">恒星と音と癒し</h2>
+            <p class="card-desc">黄道12星座と癒し音を融合。</p>
+        </div>
+    </a>
     
     <a href="./baumkuchen-blocks/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
+        <div class="card-image">Screenshot</div>
         <div class="card-content">
-            <span class="tag">Geometry</span>
+            <span class="tag">Toy</span>
             <h2 class="card-title">積み木</h2>
             <p class="card-desc">円形のブロックを組み合わせて幾何学模様を作るシミュレーター。</p>
         </div>
     </a>
 
-  <a href="./baumkuchen-blocks/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
+    <a href="./baumkuchen-blocks/" class="card">
+        <div class="card-image">Screenshot</div>
         <div class="card-content">
-            <span class="tag">Geometry</span>
-            <h2 class="card-title">クイズ「２点間問題」</h2>
+            <span class="tag">Education</span>
+            <h2 class="card-title">クイズ「2点間問題」</h2>
             <p class="card-desc">クイズ頻出の数学問題を操作可能グラフで理解。</p>
         </div>
     </a>
 
-      <a href="./baumkuchen-blocks/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
+    <a href="./baumkuchen-blocks/" class="card">
+        <div class="card-image">Screenshot</div>
         <div class="card-content">
-            <span class="tag">Geometry</span>
-            <h2 class="card-title">１５パズルの最後だけ</h2>
+            <span class="tag">Game</span>
+            <h2 class="card-title">15パズルの最後だけ</h2>
             <p class="card-desc">一番おいしいとこだけ遊ぶ。</p>
         </div>
     </a>
 
-  <a href="./baumkuchen-blocks/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
+    <a href="./baumkuchen-blocks/" class="card">
+        <div class="card-image">Screenshot</div>
         <div class="card-content">
-            <span class="tag">Geometry</span>
+            <span class="tag">Toy</span>
             <h2 class="card-title">ハンドスピナー</h2>
             <p class="card-desc">模様と音ランダム小気味いい回し体験。</p>
         </div>
     </a>
 
-  <a href="./baumkuchen-blocks/" class="card">
-        <div class="card-image">Screenshot Placeholder</div>
+    <a href="./baumkuchen-blocks/" class="card">
+        <div class="card-image">Screenshot</div>
         <div class="card-content">
-            <span class="tag">Geometry</span>
+            <span class="tag">History</span>
             <h2 class="card-title">江戸時間と大名時計</h2>
-            <p class="card-desc">酉の刻とか、暮れ六つって言われてもわからないでしょ。</p>
+            <p class="card-desc">「酉の刻」や「暮れ六つ」を視覚的に理解する。</p>
         </div>
     </a>
-    
-    </div>
+</div>
 
 </body>
 </html>

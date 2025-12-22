@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Geo & Creative Apps</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f8f9fa;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
+            margin: 0;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            color: #999;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-title {
+            margin: 0 0 10px 0;
+            font-size: 1.25em;
+            color: var(--accent);
+        }
+        .card-desc {
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .tag {
+            display: inline-block;
+            background: #e1f0fa;
+            color: #3498db;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Portfolio: Geo & Web Apps</h1>
+    <p>ジオ展2026出展に向けたプロトタイプ集</p>
+</header>
+
+<div class="container">
+    <a href="./stellar-scope/" class="card">
+        <div class="card-image">Screenshot Placeholder</div>
+        <div class="card-content">
+            <span class="tag">Geography</span>
+            <h2 class="card-title">Stellar Scope</h2>
+            <p class="card-desc">アナレンマなどの天体現象を可視化するブラウザツール。幾何学的な美しさを追求。</p>
+        </div>
+    </a>
+
+    <a href="./baumkuchen-blocks/" class="card">
+        <div class="card-image">Screenshot Placeholder</div>
+        <div class="card-content">
+            <span class="tag">Geometry</span>
+            <h2 class="card-title">バームクーヘン積み木</h2>
+            <p class="card-desc">円形のブロックを組み合わせて幾何学模様を作るシミュレーター。</p>
+        </div>
+    </a>
+
+    </div>
+
+</body>
+</html>

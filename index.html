@@ -33,16 +33,18 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
+            /* カード自体の動きを滑らかに */
+            transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
             height: 100%;
         }
+        /* ホバー時にカード全体をわずかに浮かせ、拡大する */
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
         .card-image {
             width: 100%;
@@ -51,12 +53,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            overflow: hidden; /* ズームではみ出した動画を隠す */
+            position: relative;
         }
         .card-image video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            /* 動画のズームを滑らかにする設定 */
+            transition: transform 0.5s ease;
+        }
+        /* カードにホバーしたとき、中の動画だけをさらに15%ズーム */
+        .card:hover .card-image video {
+            transform: scale(1.15);
         }
         .card-content {
             padding: 20px;
@@ -122,40 +131,6 @@
 
     <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
         <div class="card-image">
-            <video src="videos/baumkuchen.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Geography</span>
-            <h2 class="card-title">baumkuchen</h2>
-            <p class="card-desc">３０度刻みの円形積み木シミュレータ。</p>
-        </div>
-    </a>
-    
-<a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/terraspin.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Geography</span>
-            <h2 class="card-title">terraspin</h2>
-            <p class="card-desc">高度データを強調して自分の県の理解を深める。</p>
-        </div>
-    </a>
-
-
-   <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/クイゼリヤ.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Geometry</span>
-            <h2 class="card-title">クイゼリヤ</h2>
-            <p class="card-desc">２万問以上のクイズをデータベース化、有効活用。</p>
-        </div>
-    </a>
-    
-    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
             <video src="videos/spirapot.mp4" autoplay loop muted playsinline></video>
         </div>
         <div class="card-content">
@@ -209,7 +184,16 @@
         </div>
     </a>
     
-    
+    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
+        <div class="card-image">
+            <div style="color: #999;">Video Placeholder</div>
+        </div>
+        <div class="card-content">
+            <span class="tag">Geometry</span>
+            <h2 class="card-title">積み木</h2>
+            <p class="card-desc">円形のブロックを組み合わせて幾何学模様を作るシミュレーター。</p>
+        </div>
+    </a>
 
     <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
         <div class="card-image">
@@ -246,7 +230,7 @@
 
     <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
         <div class="card-image">
-          <video src="videos/江戸時間.mp4" autoplay loop muted playsinline></video>
+            <div style="color: #999;">Video Placeholder</div>
         </div>
         <div class="card-content">
             <span class="tag">History</span>

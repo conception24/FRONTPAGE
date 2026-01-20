@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
             --accent: #3498db;
             --bg: #f8f9fa;
         }
+
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: var(--bg);
@@ -17,10 +19,12 @@
             margin: 0;
             padding: 40px 20px;
         }
+
         header {
             text-align: center;
             margin-bottom: 50px;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -28,11 +32,12 @@
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
         }
+
         .card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             /* カード自体の動きを滑らかに */
             transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
             text-decoration: none;
@@ -41,11 +46,13 @@
             flex-direction: column;
             height: 100%;
         }
+
         /* ホバー時にカード全体をわずかに浮かせ、拡大する */
         .card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
+
         .card-image {
             width: 100%;
             aspect-ratio: 16 / 9;
@@ -53,9 +60,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden; /* ズームではみ出した動画を隠す */
+            overflow: hidden;
+            /* ズームではみ出した動画を隠す */
             position: relative;
         }
+
         .card-image video {
             width: 100%;
             height: 100%;
@@ -63,16 +72,19 @@
             /* 動画のズームを滑らかにする設定 */
             transition: transform 0.5s ease;
         }
+
         /* カードにホバーしたとき、中の動画だけをさらに15%ズーム */
         .card:hover .card-image video {
             transform: scale(1.15);
         }
+
         .card-content {
             padding: 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
+
         .card-title {
             margin: 0 0 10px 0;
             font-size: 1.15em;
@@ -80,6 +92,7 @@
             color: var(--primary);
             line-height: 1.4;
         }
+
         .card-desc {
             font-size: 0.9em;
             line-height: 1.6;
@@ -87,6 +100,7 @@
             color: #666;
             flex-grow: 1;
         }
+
         .tag {
             display: inline-block;
             background: #e1f0fa;
@@ -99,168 +113,173 @@
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Portfolio: Geo & Web Apps</h1>
-    <p>地図・地理・宇宙・おもちゃのプロトタイプ集</p>
-</header>
+    <header>
+        <h1>Portfolio: Geo & Web Apps</h1>
+        <p>地図・地理・宇宙・おもちゃのプロトタイプ集</p>
+        <div class="pill"
+            style="display: inline-block; font-size: 12px; color: #9ca3af; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(0,0,0,0.1); background: rgba(0,0,0,0.05); margin-top: 10px;">
+            Version: Dragonfly (トンボ)</div>
+    </header>
 
-<div class="container">
-    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/恒星距離と星座地図.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Astronomy</span>
-            <h2 class="card-title">恒星距離と星座地図</h2>
-            <p class="card-desc">星座を距離と歴史の視点で認識する。</p>
-        </div>
-    </a>
+    <div class="container">
+        <a href="https://t.co/sini78LRJP" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/恒星距離と星座地図.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Astronomy</span>
+                <h2 class="card-title">恒星距離と星座地図</h2>
+                <p class="card-desc">星座を距離と歴史の視点で認識する。</p>
+            </div>
+        </a>
 
-    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/平面地図と球体.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Geography</span>
-            <h2 class="card-title">平面地図と球体</h2>
-            <p class="card-desc">２点間の距離をアニメーションで把握させる。</p>
-        </div>
-    </a>
+        <a href="https://t.co/UrlmZPFWTC" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/平面地図と球体.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Geography</span>
+                <h2 class="card-title">平面地図と球体</h2>
+                <p class="card-desc">２点間の距離をアニメーションで把握させる。</p>
+            </div>
+        </a>
 
-   <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/spotsearchjapan.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Geometry</span>
-            <h2 class="card-title">SpotSearchJapan</h2>
-            <p class="card-desc">融合してない都道府県をあてる。簡単ですよね。</p>
-        </div>
-    </a>
-    
-    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/nicoichiken.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Geometry</span>
-            <h2 class="card-title">ニコイチ県</h2>
-            <p class="card-desc">融合した都道府県をあてる。簡単ですよね。</p>
-        </div>
-    </a>
+        <a href="https://t.co/R9NpRdl29B" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/spotsearchjapan.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Geometry</span>
+                <h2 class="card-title">SpotSearchJapan</h2>
+                <p class="card-desc">融合してない都道府県をあてる。簡単ですよね。</p>
+            </div>
+        </a>
 
-  <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/spirapot.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Geometry</span>
-            <h2 class="card-title">spirapot</h2>
-            <p class="card-desc">幾何学おもちゃスピログラムを３次元化。</p>
-        </div>
-    </a>
-    
-    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/日照度の理解.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Science</span>
-            <h2 class="card-title">日照度の理解</h2>
-            <p class="card-desc">太陽と地球の日照度を操作して体感。</p>
-        </div>
-    </a>
+        <a href="https://t.co/f1FZoI3nGi" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/nicoichiken.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Geometry</span>
+                <h2 class="card-title">ニコイチ県</h2>
+                <p class="card-desc">融合した都道府県をあてる。簡単ですよね。</p>
+            </div>
+        </a>
 
-    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/モールス.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Communication</span>
-            <h2 class="card-title">モールス信号</h2>
-            <p class="card-desc">同調語としてのモールス信号の理解と記憶。</p>
-        </div>
-    </a>
+        <a href="https://t.co/prgpggA9EG" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/spirapot.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Geometry</span>
+                <h2 class="card-title">spirapot</h2>
+                <p class="card-desc">幾何学おもちゃスピログラムを３次元化。</p>
+            </div>
+        </a>
 
-    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/恒星と音と癒し.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Sound</span>
-            <h2 class="card-title">恒星と音と癒し</h2>
-            <p class="card-desc">黄道１２星座と癒し音を融合。</p>
-        </div>
-    </a>
-    
-    <a href="./stellar-scope/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/アナレンマ.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Astronomy</span>
-            <h2 class="card-title">アナレンマ</h2>
-            <p class="card-desc">ストリートビューにアナレンマ投影、太陽と方向理解。</p>
-        </div>
-    </a>
-    
-    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-              <video src="videos/baumkuchen.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Geometry</span>
-            <h2 class="card-title">積み木</h2>
-            <p class="card-desc">円形のブロックを組み合わせて幾何学模様を作るシミュレーター。</p>
-        </div>
-    </a>
+        <a href="https://t.co/TH8OucCrwx" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/日照度の理解.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Science</span>
+                <h2 class="card-title">日照度の理解</h2>
+                <p class="card-desc">太陽と地球の日照度を操作して体感。</p>
+            </div>
+        </a>
 
-    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/クイズ２点間問題.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Education</span>
-            <h2 class="card-title">クイズ「２点間問題」</h2>
-            <p class="card-desc">クイズ頻出の数学問題を操作可能グラフで理解。</p>
-        </div>
-    </a>
+        <a href="https://t.co/6IvdFsXSMg" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/モールス.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Communication</span>
+                <h2 class="card-title">モールス信号</h2>
+                <p class="card-desc">同調語としてのモールス信号の理解と記憶。</p>
+            </div>
+        </a>
 
-    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/１５パズル.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Game</span>
-            <h2 class="card-title">１５パズルの最後だけ</h2>
-            <p class="card-desc">一番おいしいとこだけ遊ぶ。</p>
-        </div>
-    </a>
+        <a href="https://t.co/9s9VVyq7aX" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/恒星と音と癒し.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Sound</span>
+                <h2 class="card-title">恒星と音と癒し</h2>
+                <p class="card-desc">黄道１２星座と癒し音を融合。</p>
+            </div>
+        </a>
 
-    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-            <video src="videos/ハンドスピナー.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">Toy</span>
-            <h2 class="card-title">ハンドスピナー</h2>
-            <p class="card-desc">模様と音ランダム小気味いい回し体験。</p>
-        </div>
-    </a>
+        <a href="https://t.co/cfJ7kMclrM" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/アナレンマ.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Astronomy</span>
+                <h2 class="card-title">アナレンマ</h2>
+                <p class="card-desc">ストリートビューにアナレンマ投影、太陽と方向理解。</p>
+            </div>
+        </a>
 
-    <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
-        <div class="card-image">
-              <video src="videos/江戸時間.mp4" autoplay loop muted playsinline></video>
-        </div>
-        <div class="card-content">
-            <span class="tag">History</span>
-            <h2 class="card-title">江戸時間と大名時計</h2>
-            <p class="card-desc">酉の刻とか、暮れ六つって言われてもわからないでしょ。</p>
-        </div>
-    </a>
-</div>
+        <a href="./baumkuchen-blocks/" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/baumkuchen.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Geometry</span>
+                <h2 class="card-title">積み木</h2>
+                <p class="card-desc">円形のブロックを組み合わせて幾何学模様を作るシミュレーター。</p>
+            </div>
+        </a>
+
+        <a href="https://t.co/nd96SFKYXQ" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/クイズ２点間問題.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Education</span>
+                <h2 class="card-title">クイズ「２点間問題」</h2>
+                <p class="card-desc">クイズ頻出の数学問題を操作可能グラフで理解。</p>
+            </div>
+        </a>
+
+        <a href="https://t.co/8lzOzqoxGn" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/１５パズル.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Game</span>
+                <h2 class="card-title">１５パズルの最後だけ</h2>
+                <p class="card-desc">一番おいしいとこだけ遊ぶ。</p>
+            </div>
+        </a>
+
+        <a href="https://t.co/Y39s0AnopV" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/ハンドスピナー.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">Toy</span>
+                <h2 class="card-title">ハンドスピナー</h2>
+                <p class="card-desc">模様と音ランダム小気味いい回し体験。</p>
+            </div>
+        </a>
+
+        <a href="https://t.co/76cYvmQvmy" class="card" target="_blank" rel="noopener noreferrer">
+            <div class="card-image">
+                <video src="videos/江戸時間.mp4" autoplay loop muted playsinline></video>
+            </div>
+            <div class="card-content">
+                <span class="tag">History</span>
+                <h2 class="card-title">江戸時間と大名時計</h2>
+                <p class="card-desc">酉の刻とか、暮れ六つって言われてもわからないでしょ。</p>
+            </div>
+        </a>
+    </div>
 
 </body>
+
 </html>
